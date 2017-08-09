@@ -22,7 +22,6 @@
     
     CGFloat imageW = [UIScreen mainScreen].bounds.size.width - 16 * 2;
     CGFloat imageH = 200;
-    
     HXScrollPageView *scrollView = [[HXScrollPageView alloc] init];
     scrollView.frame = CGRectMake(16, 30, imageW, imageH);
     NSMutableArray *imageName = [NSMutableArray array];

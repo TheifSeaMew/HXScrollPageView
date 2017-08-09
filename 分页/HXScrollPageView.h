@@ -10,11 +10,11 @@
 
 @interface HXScrollPageView : UIView
 
-/** <#means#> */
+/** 图片名称数组 */
 @property (nonatomic, copy) NSArray *imageName;
-/** <#means#> */
+/** 其他圆点的颜色 */
 @property (nonatomic, strong) UIColor *otherColor;
-/** <#means#> */
+/** 当前圆点的颜色 */
 @property (nonatomic, strong) UIColor *currentColor;
 
 @end

@@ -9,9 +9,7 @@
 #import "HXScrollPageView.h"
 
 @interface HXScrollPageView ()<UIScrollViewDelegate>
-/** <#means#> */
 @property (nonatomic, weak) UIScrollView *scrollView;
-/** <#means#> */
 @property (nonatomic, weak) UIPageControl *pageControl;
 @end
 
@@ -63,20 +61,22 @@
     self.pageControl.currentPageIndicatorTintColor = currentColor;
 }
 
+// 重新计算frame
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    NSInteger count = self.imageName.count;
     CGFloat scrollViewW = self.frame.size.width;
     CGFloat scrollViewH = self.frame.size.height;
     self.scrollView.frame = CGRectMake(0, 0, scrollViewW, scrollViewH);
     self.pageControl.frame = CGRectMake(0, scrollViewH - 25, scrollViewW, 10);
     
-    for (int i = 0; i < self.imageName.count; i++) {
+    for (int i = 0; i < count; i++) {
         UIImageView *imageView = self.scrollView.subviews[i];
         imageView.frame = CGRectMake(i * scrollViewW, 0, scrollViewW, scrollViewH);
     }
     
-    self.scrollView.contentSize = CGSizeMake(scrollViewW * self.imageName.count, 0);
+    self.scrollView.contentSize = CGSizeMake(scrollViewW * count, 0);
 }
 
 #pragma mark - UIScrollViewDelegate
